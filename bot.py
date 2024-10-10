@@ -1,8 +1,12 @@
 import os
+from dotenv import load_dotenv
 import discord
 
+# .envファイルを読み込む
+load_dotenv()
+
 # 環境変数からDiscordのトークンを取得
-TOKEN = os.environ.get('DISCORD_BOT_TOKEN')
+TOKEN = os.getenv('DISCORD_BOT_TOKEN')
 
 client = discord.Client(intents=discord.Intents.all())
 
